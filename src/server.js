@@ -3,6 +3,7 @@ import express from "express";
 import configViewEngine from "./config/viewEngine";
 import initWedRoutes from "./routes/wed";
 import initApiRoutes from "./routes/api";
+import initApiRoutesClient from "./routes/apiClient";
 import configCors from "./config/cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
@@ -28,8 +29,11 @@ app.use(cookieParser());
 // connection();
 
 // init wed routes
+initApiRoutesClient(app);
 initWedRoutes(app);
 initApiRoutes(app);
+
+
 
 app.use((req, res) => {
   return res.send("404 not found");

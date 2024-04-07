@@ -45,7 +45,7 @@ const getUserList = async () => {
   // const connection = await mysql.createConnection({
   //   host: "localhost",
   //   user: "root",
-  //   database: "pbl3_hotel",
+  //   database: "jwt",
   //   Promise: bluebird,
   // });
 
@@ -67,7 +67,7 @@ const deleteUser = async (userId) => {
   // const connection = await mysql.createConnection({
   //   host: "localhost",
   //   user: "root",
-  //   database: "pbl3_hotel",
+  //   database: "jwt",
   //   Promise: bluebird,
   // });
 
@@ -92,7 +92,7 @@ const getUserById = async (id) => {
   // const connection = await mysql.createConnection({
   //   host: "localhost",
   //   user: "root",
-  //   database: "pbl3_hotel",
+  //   database: "jwt",
   //   Promise: bluebird,
   // });
 
@@ -119,7 +119,7 @@ const updateUserInfor = async (email, username, id) => {
   // const connection = await mysql.createConnection({
   //   host: "localhost",
   //   user: "root",
-  //   database: "pbl3_hotel",
+  //   database: "jwt",
   //   Promise: bluebird,
   // });
 

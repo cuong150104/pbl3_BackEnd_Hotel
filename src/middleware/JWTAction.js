@@ -1,5 +1,5 @@
 require("dotenv").config();
-import pbl3_hotel from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 // import { DESCRIBE } from "sequelize/types/query-types";
 
 const nonSecurePaths = ["/logout", "/login", "/register"];
@@ -8,7 +8,8 @@ const createJWT = (payload) => {
   let key = process.env.JWT_SECRET;
   let token = null;
   try {
-    token = pbl3_hotel.sign(payload, key, { expiresIn: process.env.JWT_EXPIRES_IN });
+    token = jwt.sign(payload, key, { expiresIn: process.env.JWT_EXPIRES_IN });
+    //console.log(token);
   } catch (error) {
     console.log(error);
   }
@@ -20,7 +21,7 @@ const verifyToken = (token) => {
   let key = process.env.JWT_SECRET;
   let decoded = null;
   try {
-    decoded = pbl3_hotel.verify(token, key);
+    decoded = jwt.verify(token, key);
   } catch (error) {
     console.log(error);
   }
@@ -43,8 +44,8 @@ const checkUserJWT = (req, res, next) => {
   let cookies = req.cookies;
 
   let tokenFromHeader = extractToken(req);
-  if ((cookies && cookies.pbl3_hotel) || tokenFromHeader) {
-    let token = cookies && cookies.pbl3_hotel ? cookies.pbl3_hotel : tokenFromHeader;
+  if ((cookies && cookies.jwt) || tokenFromHeader) {
+    let token = cookies && cookies.jwt ? cookies.jwt : tokenFromHeader;
     let decoded = verifyToken(token);
     if (decoded) {
       req.user = decoded;

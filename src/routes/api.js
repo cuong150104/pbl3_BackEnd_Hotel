@@ -4,6 +4,7 @@ import userController from "../controller/userController";
 import groupController from "../controller/groupController";
 import roleController from "../controller/roleController";
 import { checkUserJWT, checkUserPermission } from "../middleware/JWTAction";
+import hotelController from "../controllerClient/hotelController";
 
 const router = express.Router();
 
@@ -12,20 +13,20 @@ const router = express.Router();
  * @param {*} app : express app
  */
 
-const testMiddleware = (req, res, next) => {
-  console.log("calling a middleware");
-  if (true) {
-    return res.send("reject middleware");
-  }
-  next();
-};
+// const testMiddleware = (req, res, next) => {
+//   console.log("calling a middleware");
+//   if (true) {
+//     return res.send("reject middleware");
+//   }
+//   next();
+// };
 
 const initApiRoutes = (app) => {
   // path, handle
   // rest API
   // GET - R, POST - C, PUT - U, DELETE - D
 
-  router.all("*", checkUserJWT, checkUserPermission);
+  //router.all("*", checkUserJWT, checkUserPermission);
 
   router.post("/register", apiController.handleRegister);
   router.post("/login", apiController.handleLogin);
@@ -51,7 +52,8 @@ const initApiRoutes = (app) => {
   // group routes
   router.get("/group/read", groupController.readFunc);
 
-  
+  // //hotel routes
+  // router.get("/hotel/read", hotelController.readFunc);
 
   return app.use("/api/v1/", router);
 };

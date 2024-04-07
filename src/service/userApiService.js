@@ -44,7 +44,7 @@ const getUserWithPagination = async (page, limit) => {
       include: { model: db.Group, attributes: ["name", "description", "id"] },
       order: [["id", "DESC"]],
     });
-
+   let hotek12 = await db.Hotel.findAll();
     let totalPages = Math.ceil(count / limit);
     let data = {
       totalRows: count,

@@ -48,7 +48,7 @@ const handleLogin = async (req, res) => {
     let data = await loginRegisterService.handleUserLogin(req.body);
     // set cookie
     if (data && data.DT && data.DT.access_token) {
-      res.cookie("pbl3_hotel", data.DT.access_token, {
+      res.cookie("jwt", data.DT.access_token, {
         httpOnly: true,
         maxAge: 60 * 60 * 1000,
       });
@@ -70,7 +70,7 @@ const handleLogin = async (req, res) => {
 
 const handleLogout = (req, res) => {
   try {
-    res.clearCookie("pbl3_hotel");
+    res.clearCookie("jwt");
     return res.status(200).json({
       EM: "clear cookies done!", // error message
       EC: 0, // error code
