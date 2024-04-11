@@ -11,19 +11,40 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
       },
+      type: {
+        type: Sequelize.STRING,
+      },
       city: {
         type: Sequelize.STRING,
       },
-      cheapest_price: {
-        type: Sequelize.FLOAT,
+      address: {
+        type: Sequelize.STRING,
+      },
+      distance: {
+        type: Sequelize.STRING,
+      },
+      photos: {
+        type: Sequelize.JSON,
+      },
+      title: {
+        type: Sequelize.STRING,
+      },
+      description: {
+        type: Sequelize.STRING,
       },
       rating: {
         type: Sequelize.FLOAT,
       },
-      photos: {
-        type: Sequelize.JSON, 
+      rooms: {
+        type: Sequelize.JSON,
       },
-
+      cheapestPrice: {
+        type: Sequelize.FLOAT,
+      },
+      featured: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
