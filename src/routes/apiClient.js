@@ -16,8 +16,10 @@ const initApiRoutesClient = (app) => {
 
   //hotel routes
   router.get("/hotel/read", hotelController.readFunc);
+  router.get("/hotels/read", hotelController.readHotels);
+  router.get("/hotels/find/:id",hotelController.readHotelId);
+  //room routes
 
-  router.get("/", hotelController.readHotels);
 
   return app.use("/api/v2/", router);
 };

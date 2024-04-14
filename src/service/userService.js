@@ -88,23 +88,6 @@ const getUserById = async (id) => {
     where: { id: id },
   });
   return user.get({ plain: true });
-
-  // const connection = await mysql.createConnection({
-  //   host: "localhost",
-  //   user: "root",
-  //   database: "jwt",
-  //   Promise: bluebird,
-  // });
-
-  // try {
-  //   const [rows, fields] = await connection.execute(
-  //     "SELECT * FROM user WHERE id=?",
-  //     [id]
-  //   );
-  //   return rows;
-  // } catch (error) {
-  //   console.log(">>> check error: ", error);
-  // }
 };
 
 const updateUserInfor = async (email, username, id) => {

@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       max_people: DataTypes.INTEGER,
       description: DataTypes.STRING,
       room_numbers: DataTypes.JSON,
+      hotelId: DataTypes.INTEGER,
     },
     {
       sequelize,

@@ -27,11 +27,9 @@ const getAllHotel = async () => {
   }
 };
 const getHotels = async () => {
+
   try {
-    const hotels = await db.Hotel.find({
-
-    }).limit(req.query.limit);
-
+    let hotels = await db.Hotel.findAll();
     if (hotels) {
       return {
         EM: "get data success Hotel",
@@ -55,11 +53,36 @@ const getHotels = async () => {
   }
 };
 
-
-
+const getHotelId = async (id) =>{
+  try {
+  
+    let hotel = await db.Hotel.findByPk(id);
+    if (hotel) {
+      return {
+        EM: "get data success Hotel",
+        EC: 0,
+        DT: hotel,
+      };
+    } else {
+      return {
+        EM: "get data success Hotel",
+        EC: 0,
+        DT: [],
+      };
+    }
+  } catch (error) {
+    console.log(error);
+    return {
+      EM: "something wrong with service Hotel",
+      EC: 1,
+      DT: [],
+    };
+  }
+}
 
 
 module.exports = {
     getAllHotel,
     getHotels,
+    getHotelId,
 };

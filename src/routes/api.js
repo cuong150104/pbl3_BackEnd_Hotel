@@ -26,7 +26,7 @@ const initApiRoutes = (app) => {
   // rest API
   // GET - R, POST - C, PUT - U, DELETE - D
 
-  router.all("*", checkUserJWT, checkUserPermission);
+   router.all("*", checkUserJWT, checkUserPermission);
 
   router.post("/register", apiController.handleRegister);
   router.post("/login", apiController.handleLogin);
