@@ -55,14 +55,14 @@ const checkUserJWT = (req, res, next) => {
       return res.status(401).json({
         EM: -1,
         DT: "",
-        EM: "Not authenticated the user",
+        EM: "Not authenticated the user 1",
       });
     }
   } else {
     return res.status(401).json({
       EM: -1,
       DT: "",
-      EM: "Not authenticated the user",
+      EM: "Not authenticated the user 2",
     });
   }
 };
@@ -99,7 +99,7 @@ const checkUserPermission = (req, res, next) => {
     return res.status(401).json({
       EM: -1,
       DT: "",
-      EM: "Not authenticated the user",
+      EM: "Not authenticated the user 3",
     });
   }
 };

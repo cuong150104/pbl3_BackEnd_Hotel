@@ -111,11 +111,11 @@ const updateUsers = async (data) => {
         DT: "group",
       };
     }
-    let user = await db.User.findOne({
+    let room = await db.Room.findOne({
       where: { id: data.id },
     });
 
-    if (user) {
+    if (room) {
       // update
       await user.update({
         username: data.username,
