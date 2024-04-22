@@ -11,17 +11,20 @@ module.exports = (sequelize, DataTypes) => {
 
   Hotel.init(
     {
+      category: DataTypes.STRING,//loai hotel
       name: DataTypes.STRING,
       type: DataTypes.STRING,
       city: DataTypes.STRING,
       address: DataTypes.STRING,
-      distance:DataTypes.STRING,
+      description:DataTypes.STRING,
+      phone: DataTypes.STRING,
+      country: DataTypes.STRING,
       photos: DataTypes.JSON, // Assuming you store photo URLs as JSON
       title:DataTypes.STRING,
-      description:DataTypes.STRING,
+      distance :DataTypes.STRING,
       rating:DataTypes.FLOAT,
-      rooms:DataTypes.JSON,
       cheapestPrice:DataTypes.FLOAT,
+    
     },
     {
       sequelize,

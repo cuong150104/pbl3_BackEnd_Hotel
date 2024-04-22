@@ -15,12 +15,16 @@ module.exports = (sequelize, DataTypes) => {
   Reservation.init(
     {
         userId: DataTypes.INTEGER,
-        roomId: DataTypes.INTEGER,
-        startDate: DataTypes.DATE,
-        endDate: DataTypes.DATE,
-        discountPercent: DataTypes.FLOAT,
+        hotelId: DataTypes.INTEGER,
+        roomCount: DataTypes.INTEGER,
         totalPrice:DataTypes.FLOAT,
         reservationStatus: DataTypes.STRING,
+        discountPercent: DataTypes.FLOAT,
+        description: DataTypes.STRING,
+        isPayment: DataTypes.STRING,
+        startDate: DataTypes.DATE,
+        endDate: DataTypes.DATE,
+        reservationDate: DataTypes.DATE,
     },
     {
       sequelize,

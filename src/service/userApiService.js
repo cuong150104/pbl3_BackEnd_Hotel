@@ -98,11 +98,12 @@ const createNewUser = async (data) => {
     };
   } catch (error) {
     console.log(error);
-    return { EM: "something wrong with service", EC: 1, DT: [] };
+    return { EM: "something wrong with service ", EC: 1, DT: [] };
   }
 };
 
 const updateUsers = async (data) => {
+  console.log(">> check update: ",data);
   try {
     if (!data.groupId) {
       return {
@@ -111,11 +112,11 @@ const updateUsers = async (data) => {
         DT: "group",
       };
     }
-    let room = await db.Room.findOne({
+    let user = await db.User.findOne({
       where: { id: data.id },
     });
-
-    if (room) {
+    
+    if (user) {
       // update
       await user.update({
         username: data.username,
@@ -138,7 +139,7 @@ const updateUsers = async (data) => {
     }
   } catch (error) {
     console.log(error);
-    return { EM: "something wrong with service", EC: 1, DT: [] };
+    return { EM: "something wrong with service api users", EC: 1, DT: [] };
   }
 };
 

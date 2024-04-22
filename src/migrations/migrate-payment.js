@@ -1,56 +1,40 @@
 "use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("Hotel", {
+    await queryInterface.createTable("Payment", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      category:{
-        type: Sequelize.STRING,
+//reservationId   name    email   phoneNumber   qrCode
+      reservationId: {
+        type: Sequelize.INTEGER,
       },
       name: {
         type: Sequelize.STRING,
       },
-      type: {
+      email: {
         type: Sequelize.STRING,
       },
-      city: {
+      phoneNumber: {
         type: Sequelize.STRING,
       },
-      address: {
-        type: Sequelize.STRING,
-      },
-      description: {
-        type: Sequelize.STRING,
-      },
-      phone:{
-        type: Sequelize.STRING,
-      },
-      country:{
-        type: Sequelize.STRING,
-      },
-      photos: {
+      qrCode: {
         type: Sequelize.JSON,
       },
-      title: {
+      qr_code_url: {
+        type: Sequelize.JSON,
+      },
+      paymentStatus: {
         type: Sequelize.STRING,
       },
-      distance: {
-        type: Sequelize.STRING,
-      },
-      rating: {
+      totalAmount: {
         type: Sequelize.FLOAT,
       },
-    
-      cheapestPrice: {
+      discount: {
         type: Sequelize.FLOAT,
-      },
-      featured: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
       },
       createdAt: {
         allowNull: false,
@@ -63,6 +47,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("Hotel");
+    await queryInterface.dropTable("Payment");
   },
 };

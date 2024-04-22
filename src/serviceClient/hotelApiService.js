@@ -81,8 +81,11 @@ const getHotelId = async (id) =>{
 }
 
 
+
+
 module.exports = {
     getAllHotel,
     getHotels,
     getHotelId,
+    
 };

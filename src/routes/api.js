@@ -4,7 +4,7 @@ import userController from "../controller/userController";
 import groupController from "../controller/groupController";
 import roleController from "../controller/roleController";
 import { checkUserJWT, checkUserPermission } from "../middleware/JWTAction";
-import hotelController from "../controllerClient/hotelController";
+import hotelController from "../controller/hotelController";
 
 const router = express.Router();
 
@@ -52,8 +52,12 @@ const initApiRoutes = (app) => {
   // group routes
   router.get("/group/read", groupController.readFunc);
 
-  // //hotel routes
-  // router.get("/hotel/read", hotelController.readFunc);
+  //hotel routes
+  router.get("/hotelAdmin/read", hotelController.readFunc);
+
+  
+
+
 
   return app.use("/api/v1/", router);
 };

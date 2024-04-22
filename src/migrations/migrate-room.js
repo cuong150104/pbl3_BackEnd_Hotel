@@ -21,8 +21,11 @@ module.exports = {
         type: Sequelize.STRING,
       },
      
-      room_numbers: {
+      roomNumbers: {
         type: Sequelize.JSON,
+      },
+      hotelId: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,

@@ -1,7 +1,7 @@
 import hotelApiService from "../serviceClient/hotelApiService";
 
 
-const readFunc = async (req, res) => {
+const readFuncHotelLove = async (req, res) => {
   try {
 
     let data = await hotelApiService.getAllHotel();
@@ -43,6 +43,7 @@ const readHotels = async (req, res) => {
 
 
 
+
 const readHotelId = async(req, res) => {
   let id = req.params.id;
   try {
@@ -63,28 +64,11 @@ const readHotelId = async(req, res) => {
   }
 }
 
-// const getRoomByHotel = async (req, res) => {
-//   try {
-//     let id = req.params.id;
-//     let data = await roleApiService.getRoleByGroup(id);
-//     return res.status(200).json({
-//       EM: data.EM, // error message
-//       EC: data.EC, // error code
-//       DT: data.DT, //data
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     return res.status(500).json({
-//       EM: "error from server", // error message
-//       EC: "-1", // error code
-//       DT: "", //data
-//     });
-//   }
-// };
+
 
 
 module.exports = {
-  readFunc,
+  readFuncHotelLove,
   readHotels,
   readHotelId,
 };

@@ -3,6 +3,7 @@ import roomApiService from "../serviceClient/roomApiService";
 
 const readRoomId = async(req, res) => {
   let id = req.params.id;
+  
   try {
     let data = await roomApiService.getRoomId(id);
     return res.status(200).json({

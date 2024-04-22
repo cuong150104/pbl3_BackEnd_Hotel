@@ -11,25 +11,40 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
       },
-      roomId: {
+      hotelId: {
         type: Sequelize.INTEGER,
       },
-      startDate: {
-        type: Sequelize.DATE,
-      },
-      endDate: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-      discountPercent: {// giảm giá
-        type: Sequelize.FLOAT,
+      roomCount:  {
+        type: Sequelize.INTEGER,
       },
       totalPrice: {
         type: Sequelize.FLOAT,
       },
+     
+     
       reservationStatus: {// trạng thái đặt chỗ
         type: Sequelize.STRING,
       },
+      discountPercent: {// giảm giá
+        type: Sequelize.FLOAT,
+      },
+      description: {
+        type: Sequelize.STRING,
+      },
+      isPayment: {
+        type: Sequelize.STRING,
+      },
+
+      startDate: {
+        type: Sequelize.DATE,
+      },
+      endDate: {
+        type: Sequelize.DATE,
+      },
+      reservationDate: {
+        type: Sequelize.DATE,
+      },
+     
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
