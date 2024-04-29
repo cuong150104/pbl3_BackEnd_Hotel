@@ -9,18 +9,18 @@ const hashUserPassword = (userPassword) => {
   return bcrypt.hashSync(userPassword, salt);
 };
 
-const createNewUser = async (email, password, username) => {
-  let hashPass = hashUserPassword(password);
-  try {
-    await db.User.create({
-      username: username,
-      email: email,
-      password: hashPass,
-    });
-  } catch (error) {
-    console.log(">> check error: ", error);
-  }
-};
+// const createNewUser = async (email, password, username) => {
+//   let hashPass = hashUserPassword(password);
+//   try {
+//     await db.User.create({
+//       username: username,
+//       email: email,
+//       password: hashPass,
+//     });
+//   } catch (error) {
+//     console.log(">> check error: ", error);
+//   }
+// };
 
 const getUserList = async () => {
   // test relationships
@@ -118,7 +118,7 @@ const updateUserInfor = async (email, username, id) => {
 };
 
 module.exports = {
-  createNewUser,
+  // createNewUser,
   getUserList,
   deleteUser,
   getUserById,

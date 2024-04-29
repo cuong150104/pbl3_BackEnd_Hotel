@@ -54,8 +54,8 @@ const initApiRoutes = (app) => {
 
   //hotel routes
   router.get("/hotelAdmin/read", hotelController.readFunc);
-
-  
+  router.post("/hotel/create", hotelController.createFunc);
+  router.delete("/hotel/delete", hotelController.deleteFunc);
 
 
 

@@ -35,9 +35,7 @@ module.exports = {
       photos: {
         type: Sequelize.JSON,
       },
-      title: {
-        type: Sequelize.STRING,
-      },
+
       distance: {
         type: Sequelize.STRING,
       },

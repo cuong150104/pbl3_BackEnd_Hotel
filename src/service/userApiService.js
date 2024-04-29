@@ -67,6 +67,7 @@ const getUserWithPagination = async (page, limit) => {
   }
 };
 
+
 const createNewUser = async (data) => {
   try {
     // check email/phone number
@@ -101,7 +102,6 @@ const createNewUser = async (data) => {
     return { EM: "something wrong with service ", EC: 1, DT: [] };
   }
 };
-
 const updateUsers = async (data) => {
   console.log(">> check update: ",data);
   try {

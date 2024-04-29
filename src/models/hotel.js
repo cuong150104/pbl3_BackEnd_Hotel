@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       phone: DataTypes.STRING,
       country: DataTypes.STRING,
       photos: DataTypes.JSON, // Assuming you store photo URLs as JSON
-      title:DataTypes.STRING,
       distance :DataTypes.STRING,
       rating:DataTypes.FLOAT,
       cheapestPrice:DataTypes.FLOAT,
