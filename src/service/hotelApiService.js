@@ -52,7 +52,7 @@ const getHotelWithPagination = async (page, limit) => {
       };
     } catch (error) {
       console.log(error);
-      return { EM: "something wrong with service ", EC: 1, DT: [] };
+      return { EM: "something w999rong with service 8", EC: 1, DT: [] };
     }
   };
   const deleteHotel = async (id) => {

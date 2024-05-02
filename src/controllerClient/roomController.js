@@ -25,5 +25,4 @@ const readRoomId = async(req, res) => {
 module.exports = {
  
     readRoomId,
-   
 };

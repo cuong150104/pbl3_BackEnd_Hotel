@@ -100,6 +100,8 @@ const handleUserLogin = async (rawData) => {
           email: user.email,
           groupWithRoles,
           username: user.username,
+          userId: user.id,
+          phone: user.phone,
         };
         let token = createJWT(payload);
         return {
@@ -128,6 +130,7 @@ const handleUserLogin = async (rawData) => {
     };
   }
 };
+
 
 module.exports = {
   registerNewUser,

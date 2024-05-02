@@ -16,6 +16,8 @@ module.exports = (sequelize, DataTypes) => {
     {
         userId: DataTypes.INTEGER,
         hotelId: DataTypes.INTEGER,
+        roomId: DataTypes.INTEGER,
+        // typeRoom: DataTypes.STRING,
         roomCount: DataTypes.INTEGER,
         totalPrice:DataTypes.FLOAT,
         reservationStatus: DataTypes.STRING,

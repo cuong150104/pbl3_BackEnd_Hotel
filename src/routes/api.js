@@ -5,6 +5,7 @@ import groupController from "../controller/groupController";
 import roleController from "../controller/roleController";
 import { checkUserJWT, checkUserPermission } from "../middleware/JWTAction";
 import hotelController from "../controller/hotelController";
+import reservationController from "../controller/reservationController";
 
 const router = express.Router();
 
@@ -56,7 +57,9 @@ const initApiRoutes = (app) => {
   router.get("/hotelAdmin/read", hotelController.readFunc);
   router.post("/hotel/create", hotelController.createFunc);
   router.delete("/hotel/delete", hotelController.deleteFunc);
-
+ 
+    //reservation
+  router.post("/reservation/create", reservationController.createFunc);
 
 
   return app.use("/api/v1/", router);

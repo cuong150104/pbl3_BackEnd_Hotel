@@ -94,6 +94,8 @@ const getUserAccount = async (req, res) => {
       email: req.user.email,
       username: req.user.username,
       groupId: req.user.groupId,
+      userId: req.user.userId,
+      phone: req.user.phone,
     }, //data
   });
 };
