@@ -1,29 +1,37 @@
 "use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("Reservation_Detail", {
+    await queryInterface.createTable("Room_Type", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      roomId: {
+      type_name: {
+        type: Sequelize.STRING,
+      },
+      countRoom:
+      {
         type: Sequelize.INTEGER,
       },
-      reservationId: {
+      room_image: {
+        type:  Sequelize.JSON,
+      },
+      max_people: {
         type: Sequelize.INTEGER,
       },
+
       price: {
         type: Sequelize.FLOAT,
       },
-      startDate: {
-        type: Sequelize.DATE,
+
+      yourChoices: {
+        type: Sequelize.STRING,
       },
-      endDate: {
-        type: Sequelize.DATE,
-      },
-     
+
+
+      
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -35,6 +43,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("Reservation_Detail");
+    await queryInterface.dropTable("Room_Type");
   },
 };

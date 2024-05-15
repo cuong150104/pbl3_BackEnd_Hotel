@@ -50,6 +50,9 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         defaultValue: false
       },
+      accountId:{
+        type: Sequelize.INTEGER,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

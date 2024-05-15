@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Room.belongsTo(models.Hotel, { foreignKey: 'hotelId' }); 
+      Room.belongsTo(models.Room_Type, { foreignKey: 'roomTypeId' }); 
     }
   }
 
@@ -17,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       description: DataTypes.STRING,
       roomNumbers: DataTypes.JSON,
       hotelId: DataTypes.INTEGER,
+      roomTypeId: DataTypes.INTEGER,
     },
     {
       sequelize,

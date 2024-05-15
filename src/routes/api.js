@@ -5,7 +5,11 @@ import groupController from "../controller/groupController";
 import roleController from "../controller/roleController";
 import { checkUserJWT, checkUserPermission } from "../middleware/JWTAction";
 import hotelController from "../controller/hotelController";
-import reservationController from "../controller/reservationController";
+import hotelControllerClinet from "../controller/controllerClient/hotelController";
+import reservationController from "../controller/controllerClient/reservationController";
+import roomTypeController from "../controller/controllerClient/roomTypeController";
+import roomController from "../controller/controllerClient/roomController";
+import reservation_detailController from "../controller/controllerClient/reservation_detailController";
 
 const router = express.Router();
 
@@ -27,7 +31,7 @@ const initApiRoutes = (app) => {
   // rest API
   // GET - R, POST - C, PUT - U, DELETE - D
 
-  router.all("*", checkUserJWT, checkUserPermission);
+  router.all(/^\/(?!hotel).*/, checkUserJWT, checkUserPermission);
 
   router.post("/register", apiController.handleRegister);
   router.post("/login", apiController.handleLogin);
@@ -61,6 +65,19 @@ const initApiRoutes = (app) => {
     //reservation
   router.post("/reservation/create", reservationController.createFunc);
 
+
+
+  /////////////////// client
+
+  router.get("/hotel/room_type/by-hotel/:hotelId",roomTypeController.getRoomTypeByHotel);
+  router.get("/hotel/room/by-roomType/:roomTypeId",roomController.getRoom_By_RoomType);
+  router.get("/hotel/countByCity",hotelControllerClinet.countByCity );
+  router.get("/hotel/HoteslWithCityTilte",hotelControllerClinet.getHoteslWithCityTilte );
+  router.get("/hotel/maxIdReservation",reservationController.getMaxIdReservation );
+  
+
+  ///check quyen 
+  router.post("/hotel/reservation_detail/create",reservation_detailController.createFunc );
 
   return app.use("/api/v1/", router);
 };

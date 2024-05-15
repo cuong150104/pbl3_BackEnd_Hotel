@@ -1,6 +1,6 @@
 import express from "express";
-import hotelController from "../controllerClient/hotelController";
-import roomController from "../controllerClient/roomController";
+import hotelController from "../controller/controllerClient/hotelController";
+import roomController from "../controller/controllerClient/roomController";
 import { checkUserJWT, checkUserPermission } from "../middleware/JWTAction";
 
 const router = express.Router();
@@ -35,7 +35,7 @@ const initApiRoutesClient = (app) => {
 
 
 
-  return app.use("/api/v2/", router);
+  return app.use("/api/v1/", router);
 };
 
 export default initApiRoutesClient;

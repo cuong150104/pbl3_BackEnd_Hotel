@@ -42,19 +42,7 @@ const getUserList = async () => {
   user = await db.User.findAll();
   return user;
 
-  // const connection = await mysql.createConnection({
-  //   host: "localhost",
-  //   user: "root",
-  //   database: "jwt",
-  //   Promise: bluebird,
-  // });
-
-  // try {
-  //   const [rows, fields] = await connection.execute("Select * from user");
-  //   return rows;
-  // } catch (error) {
-  //   console.log(">>> check error: ", error);
-  // }
+ 
 };
 
 const deleteUser = async (userId) => {

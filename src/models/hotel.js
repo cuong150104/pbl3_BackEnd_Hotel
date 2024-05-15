@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       distance :DataTypes.STRING,
       rating:DataTypes.FLOAT,
       cheapestPrice:DataTypes.FLOAT,
+      accountId: DataTypes.INTEGER,
     
     },
     {
