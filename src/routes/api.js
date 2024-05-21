@@ -10,7 +10,7 @@ import reservationController from "../controller/controllerClient/reservationCon
 import roomTypeController from "../controller/controllerClient/roomTypeController";
 import roomController from "../controller/controllerClient/roomController";
 import reservation_detailController from "../controller/controllerClient/reservation_detailController";
-
+import { sendEmailController } from "../controller/emailController.js";
 const router = express.Router();
 
 /**
@@ -62,8 +62,7 @@ const initApiRoutes = (app) => {
   router.post("/hotel/create", hotelController.createFunc);
   router.delete("/hotel/delete", hotelController.deleteFunc);
  
-    //reservation
-  router.post("/reservation/create", reservationController.createFunc);
+
 
 
 
@@ -76,8 +75,17 @@ const initApiRoutes = (app) => {
   router.get("/hotel/maxIdReservation",reservationController.getMaxIdReservation );
   
 
-  ///check quyen 
+  ///==========check quyen 
   router.post("/hotel/reservation_detail/create",reservation_detailController.createFunc );
+
+      //reservation
+  router.post("/reservation/create", reservationController.createFunc);
+
+  router.put("/hotel/booking-message", reservationController.bookingMessage);
+
+    //email router
+  router.post("/sendEmail", sendEmailController);
+
 
   return app.use("/api/v1/", router);
 };

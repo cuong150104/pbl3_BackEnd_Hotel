@@ -1,10 +1,10 @@
 import db from "../../models/index";
-
+import { sendEmailService } from "../emailService";
 const createNewReservation = async (data) => {
   try {
 
     await db.Reservation.create({ ...data });
-    console.log(">>check data reservation: ", data);
+    // console.log(">>check data reservation: ", data);
     return {
       EM: "CREATE Ok!",
       EC: 0,
@@ -45,9 +45,45 @@ const getMaxIdReservation = async () => {
   }
 };
 
+const bookingMessage = async (data) => {
+  try {
+
+    let sendEmail = await sendEmailService(
+      data.email,
+      data.name,
+      data.phone,
+      data.address,
+      
+    );
+ 
+      if (sendEmail) {
+        return {
+          EM: "reject success",
+          EC: 0,
+          DT: sendEmail,
+        };
+      } else {
+        return {
+          EM: "reject unsuccess",
+          EC: 0,
+          DT: [],
+        };
+      }
+    
+    
+  } catch (error) {
+    console.log(error);
+    return {
+      EM: "something wrong with service",
+      EC: 1,
+      DT: [],
+    };
+  }
+};
+
 
 module.exports = {
   createNewReservation,
   getMaxIdReservation,
-
+  bookingMessage,
 };

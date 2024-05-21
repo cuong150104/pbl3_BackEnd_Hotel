@@ -42,7 +42,7 @@ const getHotels = async (min, max, city, others) => {
       },
    
     };
-   console.log(">>chek where: ", options);
+  //  console.log(">>chek where: ", options);
     // Query the Hotel model using Sequelize
     const hotels = await db.Hotel.findAll(options);
 

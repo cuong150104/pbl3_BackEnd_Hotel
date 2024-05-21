@@ -4,7 +4,7 @@ const createNewReservation_detail = async (data) => {
   try {
 
     await db.Reservation_Detail.create({ ...data });
-    console.log(">>check data reservation: ", data);
+//    console.log(">>check data reservation: ", data);
     return {
       EM: "CREATE Ok!",
       EC: 0,

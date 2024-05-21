@@ -70,7 +70,7 @@ const readHotelId = async(req, res) => {
 
 const countByCity = async (req, res) => {
   const cities = req.query.cities.split(",");
-  console.log("////check cities", cities)
+  // console.log("////check cities", cities)
   try {
     let data = await hotelApiService.countByCity(cities);
     return res.status(200).json({
@@ -91,7 +91,7 @@ const countByCity = async (req, res) => {
 
 const getHoteslWithCityTilte = async (req, res) => {
   const cities = req.query.cities
-  console.log("////check cities", cities)
+  // console.log("////check cities", cities)
   try {
     let data = await hotelApiService.getHoteslWithCityTilte(cities);
     return res.status(200).json({
