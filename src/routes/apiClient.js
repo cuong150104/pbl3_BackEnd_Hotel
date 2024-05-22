@@ -2,6 +2,7 @@ import express from "express";
 import hotelController from "../controller/controllerClient/hotelController";
 import roomController from "../controller/controllerClient/roomController";
 import { checkUserJWT, checkUserPermission } from "../middleware/JWTAction";
+import roomTypeController from "../controller/controllerClient/roomTypeController";
 
 const router = express.Router();
 
@@ -10,12 +11,10 @@ const router = express.Router();
  * @param {*} app : express app
  */
 
-
 const initApiRoutesClient = (app) => {
   // path, handle
   // rest API
   // GET - R, POST - C, PUT - U, DELETE - D
-
 
   // router.all("*", checkUserJWT, checkUserPermission);
   //hotel routes
@@ -26,14 +25,10 @@ const initApiRoutesClient = (app) => {
   router.get("/hotels/room/:id", roomController.readRoomId);
 
   //reservation routes
-  router.get("/reservation/:id",);
+  router.get("/reservation/:id");
 
-
-
-
-
-
-
+  // room type
+  router.get("/roomTypes", roomTypeController.getRoomTypes);
 
   return app.use("/api/v1/", router);
 };

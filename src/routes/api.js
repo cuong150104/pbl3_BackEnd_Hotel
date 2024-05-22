@@ -11,6 +11,8 @@ import roomTypeController from "../controller/controllerClient/roomTypeControlle
 import roomController from "../controller/controllerClient/roomController";
 import reservation_detailController from "../controller/controllerClient/reservation_detailController";
 import { sendEmailController } from "../controller/emailController.js";
+import roomAdminController from "../controller/roomController";
+
 const router = express.Router();
 
 /**
@@ -53,39 +55,55 @@ const initApiRoutes = (app) => {
   router.get("/role/by-group/:groupId", roleController.getRoleByGroup);
   router.post("/role/assign-to-group", roleController.assignRoleToGroup);
 
-
   // group routes
   router.get("/group/read", groupController.readFunc);
 
   //hotel routes
   router.get("/hotelAdmin/read", hotelController.readFunc);
+  router.get("/private/hotel/read", hotelController.readFunc);
   router.post("/hotel/create", hotelController.createFunc);
   router.delete("/hotel/delete", hotelController.deleteFunc);
- 
+  router.get("/hotel/:hotelId/rooms", hotelController.getRoomsByHotelId);
 
-
-
+  // room routes
+  router.post("/rooms", roomAdminController.createRoom);
+  router.get("/rooms/:id", roomAdminController.getRoomById);
+  router.put("/rooms/:id", roomAdminController.updateRoom);
+  router.delete("/rooms/:id", roomAdminController.deleteRoom);
 
   /////////////////// client
 
-  router.get("/hotel/room_type/by-hotel/:hotelId",roomTypeController.getRoomTypeByHotel);
-  router.get("/hotel/room/by-roomType/:roomTypeId",roomController.getRoom_By_RoomType);
-  router.get("/hotel/countByCity",hotelControllerClinet.countByCity );
-  router.get("/hotel/HoteslWithCityTilte",hotelControllerClinet.getHoteslWithCityTilte );
-  router.get("/hotel/maxIdReservation",reservationController.getMaxIdReservation );
-  
+  router.get(
+    "/hotel/room_type/by-hotel/:hotelId",
+    roomTypeController.getRoomTypeByHotel
+  );
+  router.get(
+    "/hotel/room/by-roomType/:roomTypeId",
+    roomController.getRoom_By_RoomType
+  );
+  router.get("/hotel/countByCity", hotelControllerClinet.countByCity);
+  router.get(
+    "/hotel/HoteslWithCityTilte",
+    hotelControllerClinet.getHoteslWithCityTilte
+  );
+  router.get(
+    "/hotel/maxIdReservation",
+    reservationController.getMaxIdReservation
+  );
 
-  ///==========check quyen 
-  router.post("/hotel/reservation_detail/create",reservation_detailController.createFunc );
+  ///==========check quyen
+  router.post(
+    "/hotel/reservation_detail/create",
+    reservation_detailController.createFunc
+  );
 
-      //reservation
+  //reservation
   router.post("/reservation/create", reservationController.createFunc);
 
   router.put("/hotel/booking-message", reservationController.bookingMessage);
 
-    //email router
+  //email router
   router.post("/sendEmail", sendEmailController);
-
 
   return app.use("/api/v1/", router);
 };

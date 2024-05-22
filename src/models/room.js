@@ -5,8 +5,11 @@ module.exports = (sequelize, DataTypes) => {
   class Room extends Model {
     static associate(models) {
       // define association here
-      Room.belongsTo(models.Hotel, { foreignKey: 'hotelId' }); 
-      Room.belongsTo(models.Room_Type, { foreignKey: 'roomTypeId' }); 
+      Room.belongsTo(models.Hotel, { foreignKey: "hotelId", as: "hotel" });
+      Room.belongsTo(models.Room_Type, {
+        foreignKey: "roomTypeId",
+        as: "roomType",
+      });
     }
   }
 
@@ -19,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       roomNumbers: DataTypes.JSON,
       hotelId: DataTypes.INTEGER,
       roomTypeId: DataTypes.INTEGER,
+      roomStatus: DataTypes.INTEGER,
     },
     {
       sequelize,
