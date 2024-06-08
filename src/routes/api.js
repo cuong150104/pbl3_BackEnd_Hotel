@@ -33,7 +33,8 @@ const initApiRoutes = (app) => {
   // rest API
   // GET - R, POST - C, PUT - U, DELETE - D
 
-  router.all(/^\/(?!hotel).*/, checkUserJWT, checkUserPermission);
+  router.all(/^\/(?!hotel|bookings).*/, checkUserJWT, checkUserPermission);
+
 
   router.post("/register", apiController.handleRegister);
   router.post("/login", apiController.handleLogin);
@@ -104,6 +105,14 @@ const initApiRoutes = (app) => {
 
   //email router
   router.post("/sendEmail", sendEmailController);
+
+  // booking
+  router.get("/bookings", reservationController.getListBooking);
+  router.get("/bookings/:bookingId", reservationController.getDetailBooking);
+  router.put(
+    "/bookings/:bookingId/updateStatus",
+    reservationController.updateStatus
+  );
 
   return app.use("/api/v1/", router);
 };
