@@ -12,6 +12,7 @@ import roomController from "../controller/controllerClient/roomController";
 import reservation_detailController from "../controller/controllerClient/reservation_detailController";
 import { sendEmailController } from "../controller/emailController.js";
 import roomAdminController from "../controller/roomController";
+import statisticController from "../controller/statisticsController";
 
 const router = express.Router();
 
@@ -33,7 +34,7 @@ const initApiRoutes = (app) => {
   // rest API
   // GET - R, POST - C, PUT - U, DELETE - D
 
-  router.all(/^\/(?!hotel|bookings).*/, checkUserJWT, checkUserPermission);
+  router.all(/^\/(?!hotel|bookings|statistics).*/, checkUserJWT, checkUserPermission);
 
 
   router.post("/register", apiController.handleRegister);
@@ -112,6 +113,13 @@ const initApiRoutes = (app) => {
   router.put(
     "/bookings/:bookingId/updateStatus",
     reservationController.updateStatus
+  );
+
+  // statistic
+  router.get("/statistics", statisticController.getStatistics);
+  router.get(
+    "/statistics/top-booking-rooms",
+    statisticController.getTopBookingRooms
   );
 
   return app.use("/api/v1/", router);

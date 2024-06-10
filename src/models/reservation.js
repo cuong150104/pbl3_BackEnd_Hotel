@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
         // reservationDate: DataTypes.DATE,
         userId: DataTypes.INTEGER,
         hotelId: DataTypes.INTEGER,
-        // roomId: DataTypes.INTEGER,
+        //roomId: DataTypes.INTEGER,
         // typeRoom: DataTypes.STRING,
         roomCount: DataTypes.INTEGER,
         totalPrice: DataTypes.FLOAT,
