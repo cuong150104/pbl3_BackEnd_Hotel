@@ -4,7 +4,7 @@ dotenv.config();
 
 export const sendEmailService = async (email, name, phoneNumber, address) => {
     // Create a transporter object using the default SMTP transport
-    console.log(">>>check: ",email);
+    // console.log(">>>check: ",email);
     let transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 587,
@@ -14,7 +14,7 @@ export const sendEmailService = async (email, name, phoneNumber, address) => {
             pass: process.env.EMAIL_PASSWORD, // generated ethereal password
         },
     });
-    console.log(">>>check: ",transporter);
+    //console.log(">>>check: ",transporter);
 
     // setup email data with unicode symbols
     let mailOptions = {

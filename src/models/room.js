@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "roomTypeId",
         as: "roomType",
       });
+
     }
   }
 

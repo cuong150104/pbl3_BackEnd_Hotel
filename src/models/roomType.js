@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   class Room_Type extends Model {
     static associate(models) {
       // define association here
-      Room_Type.hasMany(models.Room, { foreignKey: "roomTypeId" });
+      Room_Type.hasMany(models.Room, { foreignKey: "roomTypeId", as: "rooms" });
 
       
     }

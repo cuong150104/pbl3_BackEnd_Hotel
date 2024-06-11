@@ -10,7 +10,7 @@ const getRoomId = async (id) => {
       where: {
         hotelId: id
       },
-      include: { model: db.Room_Type, attributes: ["type_name", "countRoom", "room_image"] },
+      include: { model: db.Room_Type, as: 'roomType', attributes: ["type_name", "countRoom", "room_image"] },
     });
 
     if (room) {

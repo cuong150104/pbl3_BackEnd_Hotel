@@ -3,6 +3,7 @@ import hotelApiService from "../../service/serviceClient/hotelApiService";
 import reservationApiService from "../../service/serviceClient/reservationApiService";
 const createFunc = async (req, res) => {
   try {
+    console.log(">>check create: ", req.body);
     let data = await reservationApiService.createNewReservation(req.body);
     return res.status(200).json({
       EM: data.EM, // error message

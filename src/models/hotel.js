@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
   class Hotel extends Model {
     static associate(models) {
       // define association here
-      Hotel.hasMany(models.Room, { foreignKey: 'hotelId' });
+     // Hotel.hasMany(models.Room, { foreignKey: 'hotelId' });
+     Hotel.hasMany(models.Room, { foreignKey: "hotelId", as: "rooms" });
     }
   }
 
