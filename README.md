@@ -96,9 +96,13 @@ The methodology section outlines the steps and processes followed to achieve the
 
 ![Login Interface](images/login_interface.png)
 *Figure 1: Login Interface*
+![alt text](image-1.png)
 
 ![Main Interface](images/main_interface.png)
 *Figure 2: Main Interface for Users*
+![alt text](image-2.png)
+
+
 
 ### Feedback and Evaluation
 - Summary of the experimental results, highlighting the successful aspects and areas for improvement.
@@ -119,6 +123,7 @@ The methodology section outlines the steps and processes followed to achieve the
 ## Appendix
 - Additional materials such as source code snippets, sample data, diagrams, and other supporting documents.
 
----
+
+
 
 This README file provides a comprehensive overview of the project, detailing the objectives, methodology, system design, implementation, results, and future directions. It serves as a guide for understanding the project's scope and contributions.
