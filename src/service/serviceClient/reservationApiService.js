@@ -53,8 +53,11 @@ const bookingMessage = async (data) => {
     let sendEmail = await sendEmailService(
       data.email,
       data.name,
-      data.phone,
-      data.address
+      data.phoneNumber,
+      data.address,
+      data.startDate,
+      data.endDate,
+  
     );
 
     if (sendEmail) {

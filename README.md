@@ -94,11 +94,11 @@ The methodology section outlines the steps and processes followed to achieve the
 - Testing various scenarios such as system login, data entry/view, search and statistics functions, and query/report functions.
 - Evaluation of the system's performance and user feedback.
 
-![Login Interface](images/login_interface.png)
+
 *Figure 1: Login Interface*
 ![alt text](image-1.png)
 
-![Main Interface](images/main_interface.png)
+
 *Figure 2: Main Interface for Users*
 ![alt text](image-2.png)
 
