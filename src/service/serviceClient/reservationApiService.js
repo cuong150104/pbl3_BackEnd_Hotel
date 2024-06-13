@@ -57,6 +57,9 @@ const bookingMessage = async (data) => {
       data.address,
       data.startDate,
       data.endDate,
+      data.nameHotel,
+      data.totalRoom,
+      data.totalPrice,
   
     );
 

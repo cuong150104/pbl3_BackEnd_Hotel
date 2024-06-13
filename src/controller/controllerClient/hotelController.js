@@ -109,7 +109,10 @@ const getHoteslWithCityTilte = async (req, res) => {
     });
   }
 }
+ const getNameHotel_by_hotelId = async() =>
+  {
 
+  }
 
 
 
@@ -119,4 +122,5 @@ module.exports = {
   readHotelId,
   countByCity,
   getHoteslWithCityTilte,
+  getNameHotel_by_hotelId,
 };

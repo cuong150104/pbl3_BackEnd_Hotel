@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-export const sendEmailService = async (email, name, phoneNumber, address, startDate, endDate) => {
+export const sendEmailService = async (email, name, phoneNumber, address, startDate, endDate, nameHotel, totalRoom, totalPrice) => {
     // Create a transporter object using the default SMTP transport
     // console.log(">>>check: ",email);
     let transporter = nodemailer.createTransport({
@@ -24,13 +24,17 @@ export const sendEmailService = async (email, name, phoneNumber, address, startD
         text: "nội dung", // plain text body
         html: `<h2>Bạn đã đặt phòng thành công</h2>
                <p><b>Địa chỉ address:</b> ${address}</p>
-               <p><b>Tên hotel:</b></p>
+               <p><b>Tên hotel:</b>${nameHotel}</p>
                <p><b>Họ và tên người đặt phòng:</b>${name}</p>
                <p><b>Số điện thoại người đặt phòng:</b>${phoneNumber}</p>
 
                <h3>Thông tin các phòng đã đặt</h3>
+               <p>Số lượng phòng: ${totalRoom}</p>
+               <p>Số phong: </p>
                <p><b>Ngày đặt phòng: ${startDate}</b></p>
                 <p><b>Ngày trả phòng: ${endDate}</b></p>
+
+                <p><b>Tổng số tiền phải thanh toán: ${totalPrice}</b></p>
                <p>Cảm ơn bạn đã tin dùng booking.com</p>`,
     };
 
