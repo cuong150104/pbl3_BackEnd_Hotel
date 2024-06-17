@@ -30,15 +30,15 @@ Install mySQL, python, nodejs, reactjs,...
 - Authentication and authorization: JWT
 ## How to run
 After cloning the project and opening the solution file, you will see the project folder structure like this:
-![alt text](imge/image-3.png)
+![alt text](imge/imge/image-3.png)
 model-controller
-![alt text](image-4.png)
+![alt text](imge/imge/image-4.png)
 View
-![alt text](image-5.png)
+![alt text](imge/imge/image-5.png)
 ## Databases
-![alt text](image-8.png)
+![alt text](imge/imge/image-8.png)
 ## Usecase diagram
-![alt text](image-7.png)
+![alt text](imge/imge/image-7.png)
 
 ## ALGORITHM ANALYSIS
 - Search and filtering algorithm
@@ -70,79 +70,79 @@ View
 
 ### Scenario 1 – Login system
 *Figure 1: Login Interface*
-![alt text](image-1.png)
+![alt text](imge/imge/image-1.png)
 
 ### Scenario 2 – Main interface for users
 
 1. Interface for Client
 *Figure 2: Main Interface for Client*
-![alt text](image-2.png)
+![alt text](imge/imge/image-2.png)
 
 2. Interface for Admin
 *Figure 3: Main Interface for Admin*
-![alt text](image-9.png)
+![alt text](imge/image-9.png)
 
 3. Interface for Customer
 *Figure 4: Main Interface for Customer*
-![alt text](image-10.png)
+![alt text](imge/image-10.png)
 
 
 ### Scenario 3 – Search and statistics functions
 
 #### Interface for Client
 *Figure 5: Search interface*
-![alt text](image-11.png)
+![alt text](imge/image-11.png)
 
 *Figure 6: Export search results*
-![alt text](image-12.png)
+![alt text](imge/image-12.png)
 
 *Figure 7: View hotel booking information*
-![alt text](image-13.png)
-![alt text](image-14.png)
+![alt text](imge/image-13.png)
+![alt text](imge/image-14.png)
 
 *Figure 8: Fill in basic information to book a room*
-![alt text](image-15.png)
+![alt text](imge/image-15.png)
 
 *Figure 9: Pay with momo*
-![alt text](image-16.png)
+![alt text](imge/image-16.png)
 
 *Figure 10: Send booking results to email*
-![alt text](image-17.png)
+![alt text](imge/image-17.png)
 
 #### Interface for Admin
 *Figure 11:User managementn*
-![alt text](image-18.png)
+![alt text](imge/image-18.png)
 
 *Figure 12:add users*
-![alt text](image-19.png)
+![alt text](imge/image-19.png)
 
 *Figure 13:Manage roles*
-![alt text](image-20.png)
+![alt text](imge/image-20.png)
 
 *Figure 14:Manage group*
-![alt text](image-21.png)
+![alt text](imge/image-21.png)
 
 *Figure 15: Hotel and room management*
-![alt text](image-22.png)
-![alt text](image-23.png)
+![alt text](imge/image-22.png)
+![alt text](imge/image-23.png)
 create room
-![alt text](image-24.png)
+![alt text](imge/image-24.png)
 *Figure 16:Manage bookings*
-![alt text](image-25.png)
+![alt text](imge/image-25.png)
 
 *Figure 17:Revenue statistics*
-![alt text](image-26.png)
+![alt text](imge/image-26.png)
 
 
 ### Interface for Customer
 *Figure 18: Hotel and room management*
-![alt text](image-22.png)
-![alt text](image-23.png)
+![alt text](imge/image-22.png)
+![alt text](imge/image-23.png)
 create room
-![alt text](image-24.png)
+![alt text](imge/image-24.png)
 *Figure 19:Manage bookings*
-![alt text](image-25.png)
+![alt text](imge/image-25.png)
 
 *Figure 20:Revenue statistics*
-![alt text](image-26.png)
+![alt text](imge/image-26.png)
 
