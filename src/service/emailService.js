@@ -30,7 +30,7 @@ export const sendEmailService = async (email, name, phoneNumber, address, startD
 
                <h3>Thông tin các phòng đã đặt</h3>
                <p>Số lượng phòng: ${totalRoom}</p>
-               <p>Số phong: </p>
+               
                <p><b>Ngày đặt phòng: ${startDate}</b></p>
                 <p><b>Ngày trả phòng: ${endDate}</b></p>
 
