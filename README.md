@@ -30,15 +30,15 @@ Install mySQL, python, nodejs, reactjs,...
 - Authentication and authorization: JWT
 ## How to run
 After cloning the project and opening the solution file, you will see the project folder structure like this:
-![alt text](imge/imge/image-3.png)
+![alt text](imge/image-3.png)
 model-controller
-![alt text](imge/imge/image-4.png)
+![alt text](imge/image-4.png)
 View
-![alt text](imge/imge/image-5.png)
+![alt text](imge/image-5.png)
 ## Databases
-![alt text](imge/imge/image-8.png)
+![alt text](imge/image-8.png)
 ## Usecase diagram
-![alt text](imge/imge/image-7.png)
+![alt text](imge/image-7.png)
 
 ## ALGORITHM ANALYSIS
 - Search and filtering algorithm
@@ -70,13 +70,13 @@ View
 
 ### Scenario 1 – Login system
 *Figure 1: Login Interface*
-![alt text](imge/imge/image-1.png)
+![alt text](imge/image-1.png)
 
 ### Scenario 2 – Main interface for users
 
 1. Interface for Client
 *Figure 2: Main Interface for Client*
-![alt text](imge/imge/image-2.png)
+![alt text](imge/image-2.png)
 
 2. Interface for Admin
 *Figure 3: Main Interface for Admin*
