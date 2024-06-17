@@ -30,7 +30,7 @@ Install mySQL, python, nodejs, reactjs,...
 - Authentication and authorization: JWT
 ## How to run
 After cloning the project and opening the solution file, you will see the project folder structure like this:
-![alt text](image/image-3.png)
+![alt text](imge/image-3.png)
 model-controller
 ![alt text](image-4.png)
 View
